@@ -40,3 +40,5 @@ After each purchase, the bot updates the breakeven point, calculated as the aver
 ### Can I use this bot for other assets apart from BTC?
 
 Yes, while the bot is demonstrated using BTC, you can customize it to work with other assets as per your trading strategy.
+
+> *Remember that using risk management strategies such as the breakeven point can help optimize your trading operations, but it does not guarantee profits. Always be mindful of the risks inherent in the financial markets.*
