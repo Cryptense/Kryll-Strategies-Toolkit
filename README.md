@@ -13,9 +13,9 @@ Each strategy is explained in detail in our [Kryll Blog Post](http://blog.kryll.
 In this repository, you will find:
 
 - [**Basic DCA Bots**](/Basic%20DCA%20bots/README.md): Learn how to create and customize your first Dollar-Cost Averaging bot.
-- [**Smart DCA Bots**](): Go a step further and adapt your DCA bot to market conditions.
-- [**Win/Loss Ratio Calculations**](): Discover how to calculate and apply this key performance metric.
-- [**Adaptive Stop-Loss Systems**](): Understand how to create an adaptive stop-loss mechanism that scales with your leverage.
+- [**Smart DCA Bots**](/Smart%20DCA%20bots/README.md): Go a step further and adapt your DCA bot to market conditions.
+- [**Win/Loss Ratio Calculations**](/Win_Loss%20calculator/README.md): Discover how to calculate and apply this key performance metric.
+- [**Adaptive Stop-Loss Systems**](/Stop%20Loss%20Systems/README.md): Understand how to create an adaptive stop-loss mechanism that scales with your leverage.
 - [**Creating 'Function-Like' Structures**](): Learn how to simulate the functionality of typical programming functions within Kryll.
 - [**Going Beyond**](): Take your bots to the next level with advanced features and functionalities.
 
