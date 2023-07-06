@@ -18,6 +18,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 This tiered effect allows the stop-loss level to follow a stair-step motion, making it a dynamic trailing stop.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-24.png" alt="alt text">
+   <figcaption>Trailing Stop in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

@@ -20,6 +20,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 5. **Include a Wait Block**: This block causes the strategy to pause for one day after each purchase before it begins again.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-7.png" alt="alt text">
+   <figcaption>Basic DCA strategy buying every friday</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

@@ -20,6 +20,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 Remember, this approach requires meticulous planning for setting up and managing the function returns, but it greatly enhances the organization and flow of your bot strategy.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-32.png" alt="alt text">
+   <figcaption>Functions with returned value in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

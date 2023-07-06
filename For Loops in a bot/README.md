@@ -24,6 +24,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 With this setup, as long as 'counter' is less than or equal to 20, the action we have defined will be repeated. This method can be particularly useful for accomplishing repetitive actions and for controlling the progress of your strategy with increased precision.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-12.png" alt="alt text">
+   <figcaption>For loop in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

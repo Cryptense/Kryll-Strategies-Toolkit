@@ -24,6 +24,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 3. **Use "Test on Variables" blocks**: Use these blocks to control the execution flow of your bot depending on the current state.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-35.png" alt="alt text">
+   <figcaption>Simple state machine in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

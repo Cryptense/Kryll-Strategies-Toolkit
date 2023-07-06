@@ -26,6 +26,11 @@ For example, we could have 3 different risk modes:
 
 This strategy allows us to adjust the level of risk based on the bot's performance (RoE and win/loss ratio). We can limit our risk when the strategy is underperforming and increase our risk appetite during profitable periods.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-16.png" alt="alt text">
+   <figcaption>Risk management with win/loss ratio</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

@@ -27,6 +27,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 6. **Add a Variable Test block**: This block will allow us to validate the purchase only if the price is strictly lower than the average price we have bought at so far.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-10.png" alt="alt text">
+   <figcaption>Smart DCA strategy on Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

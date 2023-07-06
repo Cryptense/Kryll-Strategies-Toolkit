@@ -20,6 +20,11 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 Remember that setting up "functions" in your bot will require careful planning and organization. However, once established, they can simplify your bot's operation, leaving you to focus on fine-tuning your trading strategies.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-31.png" alt="alt text">
+   <figcaption>Function-like flow in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

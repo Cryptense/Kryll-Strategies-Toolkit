@@ -22,6 +22,11 @@ You can import the .kryll file in [Kryll.io](https://futures.kryll.io) or follow
 
 By employing these steps, the stop-loss adapts to the leverage, ensuring the risk is limited to 1% of the capital per trade, as opposed to 1% multiplied by the leverage.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-26.png" alt="alt text">
+   <figcaption>Leveraged Stop Loss in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?

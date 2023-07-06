@@ -23,6 +23,11 @@ Here's how you can set up the bot:
 
 This setup led to generating a return of over 34% on BTC between June 2022 and June 2023 in a bear market scenario.
 
+<figure style="text-align: center;">
+   <img src="https://blog.kryll.io/content/images/2023/07/image-20.png" alt="alt text">
+   <figcaption>Breakeven point management in Kryll</figcaption>
+</figure>
+
 ## F.A.Q.
 
 ### How to import a Kryll file?
