@@ -1,3 +1,5 @@
+[Back to menu](../README.md)
+
 # Advanced Stop-Loss Techniques for Your Kryll.io Bots
 
 ## Overview

@@ -1,3 +1,5 @@
+[Back to menu](../README.md)
+
 # Incorporating Functions for Greater Flexibility
 
 ## How does the bot work?

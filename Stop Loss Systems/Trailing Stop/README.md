@@ -1,3 +1,5 @@
+[Back to *Stop Loss Systems*](../README.md)
+
 # Kryll Trading Bot: Implementing Trailing Stop for Optimized Trading
 
 ## How does the bot work?

@@ -1,3 +1,5 @@
+[Back to menu](../README.md)
+
 # Smart Dollar Cost Averaging bot
 
 ## How does the bot work?

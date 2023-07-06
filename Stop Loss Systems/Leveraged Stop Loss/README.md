@@ -1,3 +1,5 @@
+[Back to *Stop Loss Systems*](../README.md)
+
 # Kryll Trading Bot: Adaptive Stop-Loss for Leveraged Trading
 
 ## How does the bot work?

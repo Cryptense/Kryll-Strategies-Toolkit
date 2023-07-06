@@ -1,3 +1,5 @@
+[Back to *Going Beyond*](../README.md)
+
 # Managing Function Returns for Improved Navigation
 
 ## How does the bot work?

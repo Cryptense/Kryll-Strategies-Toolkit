@@ -1,3 +1,4 @@
+[Back to menu](../README.md)
 # Basic Dollar Cost Averaging bot
 
 ## How does the bot work?

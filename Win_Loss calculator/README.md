@@ -1,3 +1,5 @@
+[Back to menu](../README.md)
+
 # Using Win/Loss Ratio for Decision Making
 
 ## How does the bot work?
