@@ -12,12 +12,12 @@ Each strategy is explained in detail in our [Kryll Blog Post](http://blog.kryll.
 
 In this repository, you will find:
 
-- **Basic DCA Bots**: Learn how to create and customize your first Dollar-Cost Averaging bot.
-- **Smart DCA Bots**: Go a step further and adapt your DCA bot to market conditions.
-- **Win/Loss Ratio Calculations**: Discover how to calculate and apply this key performance metric.
-- **Adaptive Stop-Loss Systems**: Understand how to create an adaptive stop-loss mechanism that scales with your leverage.
-- **Creating 'Function-Like' Structures**: Learn how to simulate the functionality of typical programming functions within Kryll.
-- **Going Beyond**: Take your bots to the next level with advanced features and functionalities.
+- [**Basic DCA Bots**](): Learn how to create and customize your first Dollar-Cost Averaging bot.
+- [**Smart DCA Bots**](): Go a step further and adapt your DCA bot to market conditions.
+- [**Win/Loss Ratio Calculations**](): Discover how to calculate and apply this key performance metric.
+- [**Adaptive Stop-Loss Systems**](): Understand how to create an adaptive stop-loss mechanism that scales with your leverage.
+- [**Creating 'Function-Like' Structures**](): Learn how to simulate the functionality of typical programming functions within Kryll.
+- [**Going Beyond**](): Take your bots to the next level with advanced features and functionalities.
 
 All of these strategies are provided with fully commented source code to help you understand their inner workings and modify them to fit your specific needs and goals.
 
@@ -29,6 +29,16 @@ The Kryll platform is driven by a drag-and-drop interface which simplifies the p
 Beyond its user-friendly interface, Kryll also offers a range of advanced features. These include the ability to backtest strategies against historical market data, simulate trades in real-time before risking real money, and seamlessly deploy strategies on popular cryptocurrency exchanges. 
 
 With Kryll, the power to create, test, and execute efficient and effective trading strategies is at your fingertips. Whether you're a novice or a seasoned trader, Kryll offers a comprehensive toolkit to enhance your trading performance in the complex world of cryptocurrency markets.
+
+## How to use a .kryll file ?
+
+A .kryll file contains the block schema of a Kryll strategy. 
+
+Using these files is straightforward: To import a .kryll file and gain access to the strategy it holds, you need to navigate to the 'DEBUG CONSOLE' feature in the Kryll strategy editor. From there, you can easily import the .kryll file of your choice and start using the strategy contained within it. 
+This feature allows you to benefit from a multitude of pre-existing strategies and adapt them to your trading style and preferences.
+
+[![How to import a trading bot file in kryll editor](https://img.youtube.com/vi/HykQ8Ig_Hsk/0.jpg)](https://www.youtube.com/watch?v=HykQ8Ig_Hsk "How to import a trading bot in Kryll editor")
+
 
 ## Contribution
 
