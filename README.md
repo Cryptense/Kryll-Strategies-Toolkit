@@ -16,8 +16,8 @@ In this repository, you will find:
 - [**Smart DCA Bots**](/Smart%20DCA%20bots/README.md): Go a step further and adapt your DCA bot to market conditions.
 - [**Win/Loss Ratio Calculations**](/Win_Loss%20calculator/README.md): Discover how to calculate and apply this key performance metric.
 - [**Adaptive Stop-Loss Systems**](/Stop%20Loss%20Systems/README.md): Understand how to create an adaptive stop-loss mechanism that scales with your leverage.
-- [**Creating 'Function-Like' Structures**](): Learn how to simulate the functionality of typical programming functions within Kryll.
-- [**Going Beyond**](): Take your bots to the next level with advanced features and functionalities.
+- [**Creating 'Function-Like' Structures**](./Function%20like/README.md): Learn how to simulate the functionality of typical programming functions within Kryll.
+- [**Going Beyond**](./Going%20beyond/README.md): Take your bots to the next level with advanced features and functionalities.
 
 All of these strategies are provided with fully commented source code to help you understand their inner workings and modify them to fit your specific needs and goals.
 
