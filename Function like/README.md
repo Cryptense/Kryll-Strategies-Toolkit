@@ -27,10 +27,14 @@ Remember that setting up "functions" in your bot will require careful planning a
 
 ## F.A.Q.
 
-### How to import a Kryll file?
+### How do I import a Kryll file?
 
-[Here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-) is an explanation on how to do so. This strategy will also be available on [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
+You can find a detailed guide on how to import a Kryll file [here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-). This strategy will also be available on the [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
 
+### What is a "function" in the context of a Kryll bot?
 
+In the context of a Kryll bot, a "function" is a designated section of the bot that is set up to perform a specific task. These functions are akin to functions in traditional programming, enabling code reuse for more organized and manageable bots. You can define functions to perform tasks like updating a stop-loss, calculating a moving average, or any other specific task.
 
-Source code: Find the source code for this strategy on [GitHub](insert_link_here) or on our [Marketplace](insert_link_here).
+### Do I need any specific skills to implement functions in my Kryll bot?
+
+Creating functions in your Kryll bot requires a basic understanding of the concept of functions in programming and the use of the "Variable Operation" and "GoTo" blocks in Kryll. Moreover, setting up functions requires careful planning and organization to ensure that your bot operation is streamlined and effective.
