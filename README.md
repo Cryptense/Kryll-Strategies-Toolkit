@@ -1,3 +1,5 @@
+<div align=center><img src="https://blog.kryll.io/content/images/2023/07/github3.png" alt="Kryll.io bots templates" /></div>
+
 # Kryll Trading Strategies Repository
 
 Welcome to our comprehensive collection of automated trading strategies designed exclusively for [Kryll.io](https://kryll.io/). This repository serves as a comprehensive guide for both novice and expert traders looking to harness the power of Kryll's unique features. From simple Dollar-Cost Averaging bots to sophisticated adaptive stop-loss systems, you will find a multitude of trading tools to enhance your trading performance. 
