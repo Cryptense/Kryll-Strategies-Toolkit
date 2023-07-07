@@ -33,4 +33,12 @@ By employing these steps, the stop-loss adapts to the leverage, ensuring the ris
 
 [Here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-) is an explanation on how to do so. This strategy will also be available on [Kryll.io's Marketplace](https://futures.kryll.io/marketplace).
 
+### How does the adaptive stop-loss manage risk in leveraged trades?
+
+The adaptive stop-loss limits the risk to a fixed percentage of the capital per trade, regardless of the leverage. It adjusts the stop-loss value based on the leverage used, ensuring that the risk remains constant even when leverage is applied.
+
+### What is the significance of the stop_gap and stop_loss variables?
+
+stop_gap is the potential loss amount that would trigger the stop-loss, while stop_loss is the price that would trigger the stop-loss. Both are crucial for calculating and setting the adaptive stop-loss level.
+
 > *Always remember that while leveraging can potentially increase profits, it also magnifies losses. Always be mindful of the risks inherent in the financial markets.*

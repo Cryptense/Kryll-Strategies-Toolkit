@@ -34,12 +34,28 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 ## F.A.Q.
 
-### How to import a Kryll file?
+### How do I import a Kryll file?
 
-[Here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-) is an explanation on how to do so. This strategy will also be available on [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
+You can find a comprehensive guide on importing a Kryll file [here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-). This strategy is also available on the [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
 
-### What's the minimum recommended amount to start the strategy ?
+### What is the minimum recommended amount to start the strategy?
 
-Due to the minimum purchase limits set by most exchanges (around $10), this strategy should be started with a little more than $500 to ensure it can make 50 orders.
+Due to the minimum purchase limits set by most exchanges (around $10), it's recommended to start this strategy with at least $500. This ensures that the bot can make 50 orders over the year.
+
+### What is the difference between Smart DCA and standard DCA?
+
+While standard Dollar Cost Averaging (DCA) invests a fixed amount at regular intervals regardless of the asset's price, Smart DCA adjusts the investment according to market conditions. Specifically, it invests only when the Bitcoin price is lower than the average purchase price, helping to optimize investment decisions and avoid over-investing during rebound phases.
+
+### How does the Smart DCA strategy reduce the bot's drawdown?
+
+By investing only when the Bitcoin price is lower than the average purchase price, the Smart DCA strategy avoids over-investing during periods of price rebounds. This strategy can significantly reduce drawdowns or declines in the bot's account value, thus preserving the capital.
+
+### How often does the Smart DCA strategy execute trades?
+
+The strategy is set to execute a trade every Friday at 00:00, provided that there are sufficient funds available, and the current Bitcoin price is lower than the average purchase price. This equates to around 50 trades per year.
+
+### What does the Variable Test block do in the Smart DCA strategy?
+
+The Variable Test block validates a purchase only if the current price of Bitcoin is strictly lower than the average price at which we've bought Bitcoin so far. This ensures the strategy adheres to the principle of buying low, a key element of the Smart DCA strategy.
 
 > *Also, be mindful of the market conditions and your personal risk tolerance when setting up this strategy. While Smart DCA can help mitigate some risks associated with market volatility, it doesn't guarantee profits. As always with investing, there's a risk that you could lose money.*

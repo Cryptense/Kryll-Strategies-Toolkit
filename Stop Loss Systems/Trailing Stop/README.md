@@ -29,4 +29,11 @@ This tiered effect allows the stop-loss level to follow a stair-step motion, mak
 
 [Here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-) is an explanation on how to do so. This strategy will also be available on [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
 
+### What are the benefits of using a trailing stop strategy?
+
+The trailing stop strategy is an excellent tool for managing market volatility. It allows you to secure profits during bullish market trends and protects your investments during bearish periods. It offers more flexibility compared to traditional static stop-loss strategies.
+
+### Can I modify the trailing stop value?
+Yes, you can adjust the trailing stop value according to your trading strategy and risk tolerance. Just ensure that you update the "trailing_stop" variable before each profit realization.
+
 > *Remember that using risk management strategies such as the trailing stop can help optimize your trading operations, but it does not guarantee profits. Always be mindful of the risks inherent in the financial markets.*

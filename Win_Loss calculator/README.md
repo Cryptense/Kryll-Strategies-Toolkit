@@ -41,4 +41,8 @@ This strategy allows us to adjust the level of risk based on the bot's performan
 
 Since this strategy does not buy nor sell small amounts of assets, you can start with Kryll minimal amount if you don't want to invest too much.
 
+### Can I adjust the level of risk based on the bot's performance?
+
+Yes, that's the point of the strategy: you can adjust the level of risk based on the bot's performance, as calculated by the win/loss ratio. This can be done by limiting risk when the strategy is underperforming and increasing risk during profitable periods.
+
 > *Always remember that using metrics such as the win/loss ratio is a part of risk management, but it doesn't guarantee profits. The financial markets are inherently risky and volatile, and there's always a chance you could lose money.*

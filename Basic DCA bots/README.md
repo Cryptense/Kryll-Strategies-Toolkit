@@ -27,17 +27,17 @@ You can import the .kryll file in [Kryll.io](https://platform.kryll.io) or follo
 
 ## F.A.Q.
 
-### How to import a Kryll file?
+### How do I import a Kryll file?
 
-[Here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-) is an explanation on how to do so. This strategy will also be available on [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
+You can find a detailed guide on how to import a Kryll file [here](https://github.com/Cryptense/Kryll-Strategies-Toolkit/tree/main#how-to-use-a-kryll-file-). This strategy will also be available on the [Kryll.io's Marketplace](https://platform.kryll.io/marketplace).
 
-### What's the minimum recommended amount to start the strategy ?
+### What's the minimum recommended amount to start the DCA strategy?
 
-Due to the minimum purchase limits set by most exchanges (around $10), this strategy should be started with a little more than $500 to ensure it can make the intended 50 orders.
+Due to the minimum purchase limits set by most exchanges (around $10), it is recommended to start this strategy with a little more than $500. This ensures that the bot can make the intended 50 orders throughout the year.
 
-### Why does the strategy buy on Fridays?
+### Why does the DCA bot buy on Fridays?
 
-We conducted a study detailed [here](https://blog.kryll.io/best-day-to-buy-bitcoin/) showing that Friday migt be the best day to invest in BTC.
+Based on a study conducted by the Kryll team, Friday might be the best day to invest in Bitcoin. You can read more about the study [here](https://blog.kryll.io/best-day-to-buy-bitcoin/).
 
 
 > *Also, be mindful of the market conditions and your personal risk tolerance when setting up this strategy. While DCA can help mitigate some risks associated with market volatility, it doesn't guarantee profits. As always with investing, there's a risk that you could lose money.*
