@@ -1,0 +1,435 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 40,
+            "y": 200,
+            "type": "wallet",
+            "connections": [
+                "40d830e1-1589-408b-9fb5-f0f1603b67f1"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "eb7f08dc-b06c-4033-afb3-c6a517629e1d",
+            "x": 320,
+            "y": 120,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "9e8a0ec5-bcb5-4581-a210-b937ccd74c71",
+                "1c0e95f4-f15b-40b7-b04e-4af4dca102cb"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "9e8a0ec5-bcb5-4581-a210-b937ccd74c71",
+            "x": 280,
+            "y": 200,
+            "type": "and",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "2dda4dbc-a607-4c2b-bebc-4a10bcfca967"
+            ],
+            "params": {
+                "blocks": [
+                    {
+                        "id": "d1f1d0f2-590f-49ef-9777-7ae0a8a66009",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "2h",
+                            "trigger": "position",
+                            "signal": "short",
+                            "warmup": 1,
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "dda4ebc7-346f-436e-a9c2-8ae6976734b6",
+                        "type": "wait",
+                        "edited": false,
+                        "params": {
+                            "timeout": 24,
+                            "timeframe": "hours",
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "23eb2f59-f574-477b-a272-87922d793452",
+                        "type": "balance",
+                        "edited": false,
+                        "params": {
+                            "currency": "base",
+                            "operator": "more",
+                            "mode": "usd",
+                            "value": 10,
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "id": "2dda4dbc-a607-4c2b-bebc-4a10bcfca967",
+            "x": 600,
+            "y": 200,
+            "type": "buy",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "425b16d6-baf9-43b5-8d9d-de9dda53b8d6"
+            ],
+            "params": {
+                "quantity": 10,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "425b16d6-baf9-43b5-8d9d-de9dda53b8d6",
+            "x": 600,
+            "y": 120,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "eb7f08dc-b06c-4033-afb3-c6a517629e1d"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "avg_buy",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1.006,
+                    "reference": ""
+                },
+                "name": "break_even",
+                "kev": 2
+            }
+        },
+        {
+            "id": "1c0e95f4-f15b-40b7-b04e-4af4dca102cb",
+            "x": 320,
+            "y": 40,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "d502fc39-24fc-47f0-b50a-7d9220be701e"
+            ],
+            "params": {
+                "trigger": 2,
+                "mode": "avg_bought_price",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "id": "d502fc39-24fc-47f0-b50a-7d9220be701e",
+            "x": 600,
+            "y": 40,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "16a95a7b-ba00-4ca4-a06f-9daa334b60b8"
+            ],
+            "params": {
+                "quantity": 25,
+                "percent_of": "remaining",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "16a95a7b-ba00-4ca4-a06f-9daa334b60b8",
+            "x": 760,
+            "y": 40,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "181589f1-0e8d-40c5-ac21-b82db46c6937",
+                "e9707e08-d1d2-48ab-a521-c1be649860a7"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "f1b0de23-a35f-4013-9caa-26ebd61d71c4",
+            "x": 480,
+            "y": 320,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "9af2beb4-d191-498e-b5b4-c1268a05b357"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "9af2beb4-d191-498e-b5b4-c1268a05b357",
+            "x": 200,
+            "y": 320,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "40d830e1-1589-408b-9fb5-f0f1603b67f1"
+            ],
+            "params": {
+                "label": "BE Exit",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "40d830e1-1589-408b-9fb5-f0f1603b67f1",
+            "x": 160,
+            "y": 200,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "9e8a0ec5-bcb5-4581-a210-b937ccd74c71"
+            ],
+            "params": {
+                "label": "Waiting entry",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "181589f1-0e8d-40c5-ac21-b82db46c6937",
+            "x": 880,
+            "y": 40,
+            "type": "supertrend",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "535459cb-cf04-4f78-90df-fb6af4322c46"
+            ],
+            "params": {
+                "length": 10,
+                "factor": 3,
+                "rate": "2h",
+                "trigger": "position",
+                "signal": "long",
+                "warmup": 1,
+                "use_past": 1,
+                "test_zone": 0,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "535459cb-cf04-4f78-90df-fb6af4322c46",
+            "x": 880,
+            "y": 320,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "f3178145-6d67-4a5c-a76f-b3873378be6b"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "f3178145-6d67-4a5c-a76f-b3873378be6b",
+            "x": 880,
+            "y": 400,
+            "type": "supertrend",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "8e7a3a6a-f792-4e13-8aa8-06765989e81e"
+            ],
+            "params": {
+                "length": 10,
+                "factor": 3,
+                "rate": "2h",
+                "trigger": "crossover",
+                "signal": "short",
+                "warmup": 1,
+                "use_past": 1,
+                "test_zone": 0,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "8e7a3a6a-f792-4e13-8aa8-06765989e81e",
+            "x": 480,
+            "y": 400,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ad550b6b-aec8-46da-988c-50b62b6583c8"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "ad550b6b-aec8-46da-988c-50b62b6583c8",
+            "x": 120,
+            "y": 400,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "40d830e1-1589-408b-9fb5-f0f1603b67f1"
+            ],
+            "params": {
+                "label": "Market Reversal",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "e9707e08-d1d2-48ab-a521-c1be649860a7",
+            "x": 760,
+            "y": 320,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "f1b0de23-a35f-4013-9caa-26ebd61d71c4"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "price",
+                    "value": 0,
+                    "reference": ""
+                },
+                "test": "lte",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "break_even"
+                },
+                "kev": 2
+            }
+        }
+    ],
+    "name": "Break Even Exemple"
+}

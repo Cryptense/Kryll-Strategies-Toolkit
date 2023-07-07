@@ -1,0 +1,338 @@
+{
+    "name": "State Machine Exemple",
+    "blocks": [
+        {
+            "connections": [
+                "9914c6c6-ca47-41b2-852b-caac452a7780"
+            ],
+            "id": "wallet",
+            "x": 40,
+            "y": 160,
+            "type": "wallet",
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "wallet"
+            ],
+            "id": "liquidation",
+            "x": 42,
+            "y": 340,
+            "type": "liquidation",
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "5775db81-0f8f-4edc-8c77-d06f5237ad48",
+                "59b50e5e-668a-409a-aa8c-b4f753ac1c76",
+                "69e38cb8-3fd8-423c-9203-696a67484b77",
+                "42f7eed9-08b4-43f0-8084-3461c20b213d"
+            ],
+            "id": "9914c6c6-ca47-41b2-852b-caac452a7780",
+            "x": 160,
+            "y": 160,
+            "type": "hub",
+            "active": true,
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "7ff406ec-c856-4ed5-896c-5302b65ea22c"
+            ],
+            "id": "5775db81-0f8f-4edc-8c77-d06f5237ad48",
+            "x": 160,
+            "y": 40,
+            "type": "var-test",
+            "active": true,
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "status"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 0,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "d010704f-d9e2-483a-8f36-87049ee97f9c"
+            ],
+            "id": "59b50e5e-668a-409a-aa8c-b4f753ac1c76",
+            "x": 240,
+            "y": 120,
+            "type": "var-test",
+            "active": true,
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "status"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "ac423a2f-e9e4-4ab6-97e9-c158214b200a"
+            ],
+            "id": "69e38cb8-3fd8-423c-9203-696a67484b77",
+            "x": 240,
+            "y": 200,
+            "type": "var-test",
+            "active": true,
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "status"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 2,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "1c7fa35d-dc35-444f-b963-f28586774b8e"
+            ],
+            "id": "42f7eed9-08b4-43f0-8084-3461c20b213d",
+            "x": 160,
+            "y": 280,
+            "type": "var-test",
+            "active": true,
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "status"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 3,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "d23783c9-b322-4ee6-baae-283c24c4110e"
+            ],
+            "id": "7ff406ec-c856-4ed5-896c-5302b65ea22c",
+            "x": 320,
+            "y": 40,
+            "type": "info",
+            "active": true,
+            "params": {
+                "label": "Hello",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "be24486a-dd30-4aa6-9a6a-edbfdee56d0d"
+            ],
+            "id": "faa7a8b1-51a1-49a1-ac72-8a8c592548a3",
+            "x": 400,
+            "y": 120,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "status"
+                },
+                "name": "status",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "625fc4a1-c123-4f0f-ad09-f7fc3bd8f8d5"
+            ],
+            "id": "ac423a2f-e9e4-4ab6-97e9-c158214b200a",
+            "x": 320,
+            "y": 200,
+            "type": "info",
+            "active": true,
+            "params": {
+                "label": "Do this",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "be24486a-dd30-4aa6-9a6a-edbfdee56d0d"
+            ],
+            "id": "625fc4a1-c123-4f0f-ad09-f7fc3bd8f8d5",
+            "x": 400,
+            "y": 200,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "status"
+                },
+                "name": "status",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "be24486a-dd30-4aa6-9a6a-edbfdee56d0d"
+            ],
+            "id": "d23783c9-b322-4ee6-baae-283c24c4110e",
+            "x": 400,
+            "y": 40,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "status"
+                },
+                "name": "status",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "be24486a-dd30-4aa6-9a6a-edbfdee56d0d"
+            ],
+            "id": "9137eb1b-0bd4-4162-b7d4-dde9b83cb9b1",
+            "x": 400,
+            "y": 280,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "status"
+                },
+                "name": "status",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "faa7a8b1-51a1-49a1-ac72-8a8c592548a3"
+            ],
+            "id": "d010704f-d9e2-483a-8f36-87049ee97f9c",
+            "x": 320,
+            "y": 120,
+            "type": "info",
+            "active": true,
+            "params": {
+                "label": "world",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "9137eb1b-0bd4-4162-b7d4-dde9b83cb9b1"
+            ],
+            "id": "1c7fa35d-dc35-444f-b963-f28586774b8e",
+            "x": 320,
+            "y": 280,
+            "type": "info",
+            "active": true,
+            "params": {
+                "label": "Do that",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [],
+            "id": "be24486a-dd30-4aa6-9a6a-edbfdee56d0d",
+            "x": 560,
+            "y": 160,
+            "type": "goto",
+            "active": true,
+            "params": {
+                "label": "Return",
+                "target": "9914c6c6-ca47-41b2-852b-caac452a7780",
+                "kev": 2
+            }
+        }
+    ]
+}

@@ -1,0 +1,362 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 136,
+            "y": 160,
+            "type": "wallet",
+            "connections": [
+                "77e12621-abd2-4509-a17a-9a793f2439e5"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "liquidation",
+            "editable": true,
+            "x": 136,
+            "y": 40,
+            "type": "liquidation",
+            "connections": [
+                "wallet"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "77e12621-abd2-4509-a17a-9a793f2439e5",
+            "x": 216,
+            "y": 160,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "47f8d8a7-23d0-4c21-b0ca-1c91329bc0e6"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 0.05,
+                    "reference": ""
+                },
+                "operator": "/",
+                "operand_2": {
+                    "type": "leverage",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "STOP_VALUE",
+                "kev": 2
+            }
+        },
+        {
+            "id": "20048518-4a02-4f45-aca6-f7980f343df0",
+            "x": 456,
+            "y": 160,
+            "type": "buy",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "b7175a30-8c52-4d46-9bb3-6a76c57104c8"
+            ],
+            "params": {
+                "quantity": 20,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "00884027-f9ea-47f4-894e-be429c20b5f8",
+            "x": 816,
+            "y": 160,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "5fb2aeb2-82d6-4dd0-8317-9c2dde932c46",
+                "031171cb-b558-4b36-9744-acf3c9390a21"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "031171cb-b558-4b36-9744-acf3c9390a21",
+            "x": 896,
+            "y": 160,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "f79b531d-a7b4-47ab-bf32-7aa0f371925e"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "price",
+                    "value": 0,
+                    "reference": ""
+                },
+                "test": "lte",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "stop_loss"
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "b7175a30-8c52-4d46-9bb3-6a76c57104c8",
+            "x": 456,
+            "y": 40,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "52194ba1-68f5-4b42-b194-99e7ad634a31"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "STOP_VALUE"
+                },
+                "name": "stop_gap",
+                "kev": 2
+            }
+        },
+        {
+            "id": "52194ba1-68f5-4b42-b194-99e7ad634a31",
+            "x": 656,
+            "y": 40,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "f5d79b19-f4b2-452d-adea-c81a53127629"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "-",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "stop_gap"
+                },
+                "name": "stop_loss",
+                "kev": 2
+            }
+        },
+        {
+            "id": "3f014d9c-6f44-4718-b05b-b9fe15d6575a",
+            "x": 1096,
+            "y": 160,
+            "type": "close",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "0357b5d2-0e53-40bc-889d-53bbfef6de58"
+            ],
+            "params": {
+                "quantity": 100,
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "cf6f1460-1306-4b0d-85c5-bd6e6ec5b89b",
+            "x": 1216,
+            "y": 40,
+            "type": "close",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "0357b5d2-0e53-40bc-889d-53bbfef6de58"
+            ],
+            "params": {
+                "quantity": 100,
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "47f8d8a7-23d0-4c21-b0ca-1c91329bc0e6",
+            "x": 336,
+            "y": 160,
+            "type": "supertrend",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "20048518-4a02-4f45-aca6-f7980f343df0"
+            ],
+            "params": {
+                "length": 10,
+                "factor": 3,
+                "rate": "6h",
+                "trigger": "crossover",
+                "signal": "long",
+                "warmup": "0",
+                "use_past": 1,
+                "test_zone": 0,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "f5d79b19-f4b2-452d-adea-c81a53127629",
+            "x": 656,
+            "y": 160,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "00884027-f9ea-47f4-894e-be429c20b5f8"
+            ],
+            "params": {
+                "label": "Debug",
+                "dev_only": true,
+                "var_dbg": true,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "5fb2aeb2-82d6-4dd0-8317-9c2dde932c46",
+            "x": 816,
+            "y": 40,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "fe2a8aa1-3429-4913-a1f0-f808267892b0"
+            ],
+            "params": {
+                "trigger": 5,
+                "mode": "order",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "id": "fe2a8aa1-3429-4913-a1f0-f808267892b0",
+            "x": 896,
+            "y": 40,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "cf6f1460-1306-4b0d-85c5-bd6e6ec5b89b"
+            ],
+            "params": {
+                "label": "Take Profit",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "f79b531d-a7b4-47ab-bf32-7aa0f371925e",
+            "x": 1016,
+            "y": 160,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "3f014d9c-6f44-4718-b05b-b9fe15d6575a"
+            ],
+            "params": {
+                "label": "Stop Loss",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "0357b5d2-0e53-40bc-889d-53bbfef6de58",
+            "x": 1216,
+            "y": 160,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "next signal",
+                "target": "47f8d8a7-23d0-4c21-b0ca-1c91329bc0e6",
+                "kev": 2
+            }
+        }
+    ],
+    "name": "Leverage-adaptive Stop-loss"
+}

@@ -1,0 +1,648 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 120,
+            "y": 320,
+            "type": "wallet",
+            "connections": [
+                "c91aa208-2b28-4394-b8e2-457324f71b52"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "liquidation",
+            "editable": true,
+            "x": 40,
+            "y": 320,
+            "type": "liquidation",
+            "connections": [
+                "wallet"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "a7a11d7a-ee35-4304-a961-5b1415d90d13",
+            "x": 320,
+            "y": 320,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ad0ca9f3-088f-45b8-a68b-b53018b3303a"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "caller",
+                "kev": 2
+            }
+        },
+        {
+            "id": "0ae7dd90-e3bb-48fd-a9f0-e956dbf7768f",
+            "x": 920,
+            "y": 320,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "3ce66c5c-3f4e-4d73-b8d6-c3c3885cf161",
+                "56e02931-0e10-44cc-bdf2-7d60aeab5cb1",
+                "9afafa51-6deb-4dd2-bb55-063c820c1ce1",
+                "12424268-68d6-41a2-ac9e-a0ad5dd24b0a",
+                "95865cbc-22a0-48ff-82c1-e42302291dc7"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "3ce66c5c-3f4e-4d73-b8d6-c3c3885cf161",
+            "x": 1120,
+            "y": 160,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "f7bec9bc-8c68-4af8-9b85-c7bd72bdb911"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "caller"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 0,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "f7bec9bc-8c68-4af8-9b85-c7bd72bdb911",
+            "x": 1240,
+            "y": 160,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "ERROR",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "56e02931-0e10-44cc-bdf2-7d60aeab5cb1",
+            "x": 1120,
+            "y": 240,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "bcdb9bfb-265c-4fc7-9ad0-891ca1831255"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "caller"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "9afafa51-6deb-4dd2-bb55-063c820c1ce1",
+            "x": 1120,
+            "y": 320,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "74e7978a-604f-47da-b83b-193a313ac111"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "caller"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 2,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "12424268-68d6-41a2-ac9e-a0ad5dd24b0a",
+            "x": 1120,
+            "y": 400,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "5d334451-248d-40b4-a959-f6b2d37b8577"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "caller"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 3,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "95865cbc-22a0-48ff-82c1-e42302291dc7",
+            "x": 1120,
+            "y": 480,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "2464ef6f-94ae-4bd8-a3c1-367d3b4f2ada"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "caller"
+                },
+                "test": "eq",
+                "operand_2": {
+                    "type": "free",
+                    "value": 4,
+                    "reference": ""
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "5e9bd088-9e93-43cf-8042-c4faeec8232a",
+            "x": 920,
+            "y": 200,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return manager",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "b690ef64-eedf-4b4a-b574-80bdb6146f86",
+            "x": 440,
+            "y": 80,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "RET",
+                "target": "0ae7dd90-e3bb-48fd-a9f0-e956dbf7768f",
+                "kev": 2
+            }
+        },
+        {
+            "id": "c91aa208-2b28-4394-b8e2-457324f71b52",
+            "x": 200,
+            "y": 320,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "a7a11d7a-ee35-4304-a961-5b1415d90d13"
+            ],
+            "params": {
+                "label": "I'm Here",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "90ade85c-35e9-4a4c-a91d-6fa49029a374",
+            "x": 200,
+            "y": 440,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "828738c4-6ce0-412e-82dc-9c71340a7119"
+            ],
+            "params": {
+                "label": "I'm There",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "ad0ca9f3-088f-45b8-a68b-b53018b3303a",
+            "x": 440,
+            "y": 320,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "func_A",
+                "target": "8574e869-102a-4923-ac32-5b03be4f0a50",
+                "kev": 2
+            }
+        },
+        {
+            "id": "8574e869-102a-4923-ac32-5b03be4f0a50",
+            "x": 120,
+            "y": 80,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "7ab076b6-e946-4f0a-892f-8558ff2fe5fb"
+            ],
+            "params": {
+                "label": "Function A",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "7ab076b6-e946-4f0a-892f-8558ff2fe5fb",
+            "x": 280,
+            "y": 80,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "b690ef64-eedf-4b4a-b574-80bdb6146f86"
+            ],
+            "params": {
+                "label": "Do this",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "f6450681-a5bd-4969-b453-35e7260f87a8",
+            "x": 120,
+            "y": 160,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "bb6fa35d-e9be-4c8e-a297-0911a0e22454"
+            ],
+            "params": {
+                "label": "Function B",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "bb6fa35d-e9be-4c8e-a297-0911a0e22454",
+            "x": 280,
+            "y": 160,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "c063e6d3-41f6-4090-9065-315d915c5b22"
+            ],
+            "params": {
+                "label": "Do that",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "c063e6d3-41f6-4090-9065-315d915c5b22",
+            "x": 440,
+            "y": 160,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "RET",
+                "target": "0ae7dd90-e3bb-48fd-a9f0-e956dbf7768f",
+                "kev": 2
+            }
+        },
+        {
+            "id": "bcdb9bfb-265c-4fc7-9ad0-891ca1831255",
+            "x": 1240,
+            "y": 240,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return from 1",
+                "target": "90ade85c-35e9-4a4c-a91d-6fa49029a374",
+                "kev": 2
+            }
+        },
+        {
+            "id": "74e7978a-604f-47da-b83b-193a313ac111",
+            "x": 1240,
+            "y": 320,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return from 2",
+                "target": "a3aac988-c047-4778-82d9-1fff024ae732",
+                "kev": 2
+            }
+        },
+        {
+            "id": "5d334451-248d-40b4-a959-f6b2d37b8577",
+            "x": 1240,
+            "y": 400,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return from 3",
+                "target": "14876dd8-dcd8-48fa-8a2f-ee4438d4a00e",
+                "kev": 2
+            }
+        },
+        {
+            "id": "2464ef6f-94ae-4bd8-a3c1-367d3b4f2ada",
+            "x": 1240,
+            "y": 480,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return from 4",
+                "target": "58d49828-0d17-455f-9c81-281230fe02da",
+                "kev": 2
+            }
+        },
+        {
+            "id": "a3aac988-c047-4778-82d9-1fff024ae732",
+            "x": 200,
+            "y": 560,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "a0034161-358a-4da3-961f-9c6b7cb2f0d2"
+            ],
+            "params": {
+                "label": "I'm doing this",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "14876dd8-dcd8-48fa-8a2f-ee4438d4a00e",
+            "x": 200,
+            "y": 680,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "7e5202db-9402-4fbf-bdd5-287d242b3a36"
+            ],
+            "params": {
+                "label": "I'm doing that",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "828738c4-6ce0-412e-82dc-9c71340a7119",
+            "x": 320,
+            "y": 440,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "a695a97e-06e0-48c3-8b66-1a46c7172adc"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "free",
+                    "value": 2,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "caller",
+                "kev": 2
+            }
+        },
+        {
+            "id": "a0034161-358a-4da3-961f-9c6b7cb2f0d2",
+            "x": 320,
+            "y": 560,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "b2522e35-3a69-4d73-a376-7a46f566a00d"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "free",
+                    "value": 3,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "caller",
+                "kev": 2
+            }
+        },
+        {
+            "id": "7e5202db-9402-4fbf-bdd5-287d242b3a36",
+            "x": 320,
+            "y": 680,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "139ee692-4224-48c2-a74d-e35b76c5c1ee"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "free",
+                    "value": 4,
+                    "reference": ""
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "caller",
+                "kev": 2
+            }
+        },
+        {
+            "id": "a695a97e-06e0-48c3-8b66-1a46c7172adc",
+            "x": 440,
+            "y": 440,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "func_B",
+                "target": "f6450681-a5bd-4969-b453-35e7260f87a8",
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "b2522e35-3a69-4d73-a376-7a46f566a00d",
+            "x": 440,
+            "y": 560,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "func_A",
+                "target": "8574e869-102a-4923-ac32-5b03be4f0a50",
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "139ee692-4224-48c2-a74d-e35b76c5c1ee",
+            "x": 440,
+            "y": 680,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "func_B",
+                "target": "f6450681-a5bd-4969-b453-35e7260f87a8",
+                "kev": 2
+            }
+        },
+        {
+            "id": "58d49828-0d17-455f-9c81-281230fe02da",
+            "x": 198,
+            "y": 783,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Done",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        }
+    ],
+    "name": "Functions Returns Exemple"
+}

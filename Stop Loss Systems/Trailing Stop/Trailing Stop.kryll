@@ -1,0 +1,451 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 40,
+            "y": 120,
+            "type": "wallet",
+            "connections": [
+                "ffcb7729-0718-4875-9af8-7ee3cd63eab5"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "ffcb7729-0718-4875-9af8-7ee3cd63eab5",
+            "x": 120,
+            "y": 120,
+            "type": "supertrend",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "98980875-6941-49f1-89de-7d08837cf768"
+            ],
+            "params": {
+                "length": 10,
+                "factor": 3,
+                "rate": "12h",
+                "trigger": "crossover",
+                "signal": "long",
+                "warmup": "0",
+                "use_past": 1,
+                "test_zone": 0,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "98980875-6941-49f1-89de-7d08837cf768",
+            "x": 200,
+            "y": 120,
+            "type": "buy",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "a35d6af8-49e4-480f-9961-867ac4f425c4"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "4b16251e-5a0c-49c7-9697-8bb553bebd8a",
+            "x": 560,
+            "y": 360,
+            "type": "supertrend",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "0b284d80-0ff9-455f-9483-5c05dd90bfcf"
+            ],
+            "params": {
+                "length": 10,
+                "factor": 3,
+                "rate": "12h",
+                "trigger": "crossover",
+                "signal": "short",
+                "warmup": "0",
+                "use_past": 1,
+                "test_zone": 0,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "bff8b252-89e6-44af-8864-74c46e16a2f1",
+            "x": 320,
+            "y": 360,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "4b16251e-5a0c-49c7-9697-8bb553bebd8a",
+                "019aebb0-4039-4851-862e-ce0aaf576029",
+                "236c0024-57f4-4932-83c1-8f1b46c2b684"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "019aebb0-4039-4851-862e-ce0aaf576029",
+            "x": 320,
+            "y": 40,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "60c7468e-6649-406b-875b-6eeba847ef10"
+            ],
+            "params": {
+                "trigger": 5,
+                "mode": "avg_bought_price",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "id": "7eda8fb3-ea1d-4e52-a5b4-af11fb4c25d5",
+            "x": 200,
+            "y": 360,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "bff8b252-89e6-44af-8864-74c46e16a2f1"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "avg_buy",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1.005,
+                    "reference": ""
+                },
+                "name": "next_stop",
+                "kev": 2
+            }
+        },
+        {
+            "id": "ae35cf2a-a5d2-462d-84c6-ca485d19e6c9",
+            "x": 560,
+            "y": 160,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "236c0024-57f4-4932-83c1-8f1b46c2b684",
+                "0f363864-1531-4bd2-b002-737c06fed8d5",
+                "4b16251e-5a0c-49c7-9697-8bb553bebd8a"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "236c0024-57f4-4932-83c1-8f1b46c2b684",
+            "x": 480,
+            "y": 280,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "e007ca6a-aa1c-4993-bcf7-bfd50bc52aac"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "price",
+                    "value": 0,
+                    "reference": ""
+                },
+                "test": "lte",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "trailing_stop"
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "e007ca6a-aa1c-4993-bcf7-bfd50bc52aac",
+            "x": 640,
+            "y": 280,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "d4dc01a9-36d3-4445-acac-25acf0f92539"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "d4dc01a9-36d3-4445-acac-25acf0f92539",
+            "x": 760,
+            "y": 280,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ef2b98a9-3596-427a-9898-16dda8082592"
+            ],
+            "params": {
+                "label": "Stop",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "0b284d80-0ff9-455f-9483-5c05dd90bfcf",
+            "x": 640,
+            "y": 360,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "497de75f-167f-41cb-bd01-fa1ae9bb310f"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "497de75f-167f-41cb-bd01-fa1ae9bb310f",
+            "x": 760,
+            "y": 360,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ef2b98a9-3596-427a-9898-16dda8082592"
+            ],
+            "params": {
+                "label": "Market reversal",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "ef2b98a9-3596-427a-9898-16dda8082592",
+            "x": 880,
+            "y": 320,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Restart",
+                "target": "wallet",
+                "kev": 2
+            }
+        },
+        {
+            "id": "0f363864-1531-4bd2-b002-737c06fed8d5",
+            "x": 560,
+            "y": 40,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "60c7468e-6649-406b-875b-6eeba847ef10"
+            ],
+            "params": {
+                "trigger": 5,
+                "mode": "order",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "id": "a07fb141-1f07-41c2-8f3f-2f85064e45bf",
+            "x": 480,
+            "y": 160,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ae35cf2a-a5d2-462d-84c6-ca485d19e6c9"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1.002,
+                    "reference": ""
+                },
+                "name": "next_stop",
+                "kev": 2
+            }
+        },
+        {
+            "id": "efa4d66b-f815-4862-9ca9-b69906a2afc9",
+            "x": 400,
+            "y": 160,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "a07fb141-1f07-41c2-8f3f-2f85064e45bf"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "next_stop"
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "trailing_stop",
+                "kev": 2
+            }
+        },
+        {
+            "id": "a35d6af8-49e4-480f-9961-867ac4f425c4",
+            "x": 200,
+            "y": 200,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "7eda8fb3-ea1d-4e52-a5b4-af11fb4c25d5"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": "next_stop"
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "free",
+                    "value": 0.95,
+                    "reference": ""
+                },
+                "name": "trailing_stop",
+                "kev": 2
+            }
+        },
+        {
+            "id": "60c7468e-6649-406b-875b-6eeba847ef10",
+            "x": 400,
+            "y": 40,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "efa4d66b-f815-4862-9ca9-b69906a2afc9"
+            ],
+            "params": {
+                "quantity": 20,
+                "percent_of": "remaining",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        }
+    ],
+    "name": "Trailing Stop"
+}

@@ -1,0 +1,491 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 409,
+            "y": 465,
+            "type": "wallet",
+            "connections": [
+                "83a00e9d-8f38-45c5-972a-188c083a642d"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "liquidation",
+            "editable": true,
+            "x": 409,
+            "y": 345,
+            "type": "liquidation",
+            "connections": [
+                "wallet"
+            ],
+            "params": {
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "2a66046d-7855-43b5-b66e-b9c8090886da",
+            "x": 529,
+            "y": 625,
+            "type": "macd",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "158e8eaf-8425-4846-8a9b-e77683e73184"
+            ],
+            "params": {
+                "rate": "2h",
+                "fast_length": 12,
+                "slow_length": 26,
+                "signal_length": 9,
+                "fast_prime_length": 24,
+                "slow_prime_length": 52,
+                "signal_prime_length": 18,
+                "source": "c",
+                "trigger": "crossover",
+                "line": "signal",
+                "line_compared": "signal_prime",
+                "signal": "bullish",
+                "advanced": false,
+                "warmup": 1,
+                "use_past": 1,
+                "thresholds": {
+                    "min": {
+                        "enabled": false,
+                        "value": 0.01
+                    },
+                    "max": {
+                        "enabled": false,
+                        "value": 100
+                    }
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "158e8eaf-8425-4846-8a9b-e77683e73184",
+            "x": 609,
+            "y": 625,
+            "type": "buy",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "c438ddcc-bc46-4e57-94e5-a8c9c272226c"
+            ],
+            "params": {
+                "quantity": 80,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "c438ddcc-bc46-4e57-94e5-a8c9c272226c",
+            "x": 689,
+            "y": 625,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Init SL",
+                "target": "5879b1da-75a5-4522-9373-1a84e5de6a82",
+                "kev": 2
+            }
+        },
+        {
+            "id": "5879b1da-75a5-4522-9373-1a84e5de6a82",
+            "x": 649,
+            "y": 225,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "c97b6e63-aabf-4c9b-bcf1-dd694a505841"
+            ],
+            "params": {
+                "label": "First SL",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "22b4d72b-38b2-4bcd-8db9-6963b9710867",
+            "x": 649,
+            "y": 345,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "3d051720-c0ba-43dd-92fb-7bb4707bbd13"
+            ],
+            "params": {
+                "label": "TP & Update SL",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "ed386195-3977-4f4f-87c3-b6d13c935fc3",
+            "x": 929,
+            "y": 345,
+            "type": "close",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "fd49ca6c-3354-4b57-bab7-3c2ef28a2860"
+            ],
+            "params": {
+                "quantity": 20,
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "3d051720-c0ba-43dd-92fb-7bb4707bbd13",
+            "x": 769,
+            "y": 345,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ed386195-3977-4f4f-87c3-b6d13c935fc3"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1.005,
+                    "reference": ""
+                },
+                "name": "stop_loss",
+                "kev": 2
+            }
+        },
+        {
+            "id": "fd49ca6c-3354-4b57-bab7-3c2ef28a2860",
+            "x": 1049,
+            "y": 345,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return",
+                "target": "116167ba-246f-4fb3-9f40-bf5de728d1c2",
+                "kev": 2
+            }
+        },
+        {
+            "id": "116167ba-246f-4fb3-9f40-bf5de728d1c2",
+            "x": 809,
+            "y": 625,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "821f1b83-66c9-4e92-b9b1-443692b9b6d9",
+                "bc03801c-48ff-48d1-aecb-9e224b30a5b3"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "169dff1f-6100-473f-97d3-c3d2ac6b5907",
+            "x": 1049,
+            "y": 225,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return",
+                "target": "116167ba-246f-4fb3-9f40-bf5de728d1c2",
+                "kev": 2
+            }
+        },
+        {
+            "id": "c97b6e63-aabf-4c9b-bcf1-dd694a505841",
+            "x": 849,
+            "y": 225,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "169dff1f-6100-473f-97d3-c3d2ac6b5907"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "order",
+                    "value": 0,
+                    "reference": ""
+                },
+                "operator": "*",
+                "operand_2": {
+                    "type": "var",
+                    "value": 0.95,
+                    "reference": "LEVERAGED_STOP"
+                },
+                "name": "stop_loss",
+                "kev": 2
+            }
+        },
+        {
+            "id": "821f1b83-66c9-4e92-b9b1-443692b9b6d9",
+            "x": 809,
+            "y": 505,
+            "type": "var-test",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ed5b8a62-b02c-419f-9763-3d0c17372aa1"
+            ],
+            "params": {
+                "operand_1": {
+                    "type": "price",
+                    "value": 0,
+                    "reference": ""
+                },
+                "test": "lte",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "stop_loss"
+                },
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "ed5b8a62-b02c-419f-9763-3d0c17372aa1",
+            "x": 649,
+            "y": 505,
+            "type": "close",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "1f20eea6-1273-49f4-a0b1-87206d95603d"
+            ],
+            "params": {
+                "quantity": 100,
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "1f20eea6-1273-49f4-a0b1-87206d95603d",
+            "x": 529,
+            "y": 505,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "2a66046d-7855-43b5-b66e-b9c8090886da"
+            ],
+            "params": {
+                "label": "Stop_Loss",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "bc03801c-48ff-48d1-aecb-9e224b30a5b3",
+            "x": 929,
+            "y": 625,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "173a1402-1d6f-4748-a32f-968411d09a5c"
+            ],
+            "params": {
+                "trigger": 3,
+                "mode": "order",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "id": "173a1402-1d6f-4748-a32f-968411d09a5c",
+            "x": 1049,
+            "y": 625,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "TP & Update SL",
+                "target": "22b4d72b-38b2-4bcd-8db9-6963b9710867",
+                "kev": 2
+            }
+        },
+        {
+            "id": "83a00e9d-8f38-45c5-972a-188c083a642d",
+            "x": 409,
+            "y": 625,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Compute SL/Lev",
+                "target": "e4e7c0c5-6be7-4ae3-b5f7-f0d042a7e280",
+                "kev": 2
+            },
+            "error": false
+        },
+        {
+            "id": "e4e7c0c5-6be7-4ae3-b5f7-f0d042a7e280",
+            "x": 649,
+            "y": 105,
+            "type": "info",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ff459aa0-bda4-4580-a6e2-7e08acc9c80e"
+            ],
+            "params": {
+                "label": "Init SL / Lev",
+                "dev_only": false,
+                "var_dbg": false,
+                "show_also": {
+                    "wallet": true,
+                    "price": true
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "c00cf705-a9bf-4ff2-8d51-8bf615467066",
+            "x": 1049,
+            "y": 105,
+            "type": "goto",
+            "active": true,
+            "edited": false,
+            "connections": [],
+            "params": {
+                "label": "Return",
+                "target": "2a66046d-7855-43b5-b66e-b9c8090886da",
+                "kev": 2
+            }
+        },
+        {
+            "id": "ff459aa0-bda4-4580-a6e2-7e08acc9c80e",
+            "x": 769,
+            "y": 105,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "ce5ca7d8-d578-4c2b-850c-72343a51b29a"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 0.05,
+                    "reference": ""
+                },
+                "operator": "/",
+                "operand_2": {
+                    "type": "leverage",
+                    "value": 0.95,
+                    "reference": ""
+                },
+                "name": "STOP_VALUE",
+                "kev": 2
+            }
+        },
+        {
+            "id": "ce5ca7d8-d578-4c2b-850c-72343a51b29a",
+            "x": 929,
+            "y": 105,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "c00cf705-a9bf-4ff2-8d51-8bf615467066"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "operator": "-",
+                "operand_2": {
+                    "type": "var",
+                    "value": 0.95,
+                    "reference": "STOP_VALUE"
+                },
+                "name": "LEVERAGED_STOP",
+                "kev": 2
+            }
+        }
+    ],
+    "name": "Function Exemple"
+}

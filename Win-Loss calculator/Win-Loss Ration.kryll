@@ -1,0 +1,713 @@
+{
+    "name": "Win-Loss Ration",
+    "description": "",
+    "blocks": [
+        {
+            "connections": [
+                "df2a19ab-5bce-488c-afa0-36e204e921ff"
+            ],
+            "id": "wallet",
+            "x": 40,
+            "y": 320,
+            "type": "wallet",
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "ed705d37-f5ae-4089-8dd4-546acd3d2237"
+            ],
+            "id": "df2a19ab-5bce-488c-afa0-36e204e921ff",
+            "x": 120,
+            "y": 320,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "9378979c-cb30-43fc-876e-72ec19f9a929",
+                        "type": "stoch-rsi",
+                        "edited": false,
+                        "params": {
+                            "rate": "4h",
+                            "signal": "bullish",
+                            "oversell": 20,
+                            "overbuy": 80,
+                            "source": "c",
+                            "analyzed": "k",
+                            "line_mode": true,
+                            "trigger": "position",
+                            "rsi_period": 14,
+                            "stoch_period": 14,
+                            "k_period": 3,
+                            "d_period": 3,
+                            "warmup": "0",
+                            "use_past": 1,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "bb5999f4-3f8f-4a07-9a8d-2fefae19ae25",
+                        "type": "stoch-rsi",
+                        "edited": false,
+                        "params": {
+                            "rate": "4h",
+                            "signal": "oversell",
+                            "oversell": 30,
+                            "overbuy": 80,
+                            "source": "c",
+                            "analyzed": "k",
+                            "line_mode": false,
+                            "trigger": "position",
+                            "rsi_period": 14,
+                            "stoch_period": 14,
+                            "k_period": 3,
+                            "d_period": 3,
+                            "warmup": 1,
+                            "use_past": 1,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "afb1f564-2e1e-4255-a30a-69489eb7a093",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "4h",
+                            "trigger": "position",
+                            "signal": "short",
+                            "warmup": 1,
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "33636d2f-1d25-488b-90fc-6999a765fba2",
+                "b74bf3ea-3ceb-487d-9c2a-868b5cf87e35",
+                "06f7a397-0892-46f2-b22a-ac30ff631bd5"
+            ],
+            "id": "ed705d37-f5ae-4089-8dd4-546acd3d2237",
+            "x": 440,
+            "y": 320,
+            "type": "hub",
+            "active": true,
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "0b8a1752-a816-4351-9a95-fbf1e574625e"
+            ],
+            "id": "e46b700e-d6c8-4b8a-bab4-4193e8bd09fc",
+            "x": 720,
+            "y": 320,
+            "type": "buy",
+            "active": true,
+            "params": {
+                "quantity": 60,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "771355b6-09d7-427b-89e0-431dfa77ed9e"
+            ],
+            "id": "33636d2f-1d25-488b-90fc-6999a765fba2",
+            "x": 400,
+            "y": 200,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "455a2b84-f223-4af3-b8c6-8ca3cee161c5",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "roe",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "gte",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "f8ad700e-801e-494b-b2e8-5c038677fa36",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "var",
+                                "value": 0,
+                                "reference": "win_loss_ratio"
+                            },
+                            "test": "gte",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 1,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "cffd3030-514d-48cc-a421-0171d1f38607"
+            ],
+            "id": "b74bf3ea-3ceb-487d-9c2a-868b5cf87e35",
+            "x": 400,
+            "y": 440,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "455a2b84-f223-4af3-b8c6-8ca3cee161c5",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "roe",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "lt",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "80357343-c6e0-4fb0-a25d-072c6c882383",
+                "e286f769-0636-4789-8ff2-557b06bb885f",
+                "9bf174d0-7f0d-4f98-8b1a-1779a2a3fc87",
+                "4cc11576-66b5-49cd-954a-e861a9630ba5"
+            ],
+            "id": "0b8a1752-a816-4351-9a95-fbf1e574625e",
+            "x": 800,
+            "y": 320,
+            "type": "hub",
+            "active": true,
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "d8b17abc-e5fc-470b-84dd-e9e5d04e9c84"
+            ],
+            "id": "80357343-c6e0-4fb0-a25d-072c6c882383",
+            "x": 967,
+            "y": 482,
+            "type": "price-down",
+            "active": true,
+            "params": {
+                "trigger": 2,
+                "mode": "order",
+                "time_out": 0,
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "ca65aff2-f665-4ebd-b206-f1fea4de7524"
+            ],
+            "id": "d8b17abc-e5fc-470b-84dd-e9e5d04e9c84",
+            "x": 1200,
+            "y": 480,
+            "type": "sell",
+            "active": true,
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "e2a1900c-fbe5-4cf0-b9a4-83e9f6a6aaa1"
+            ],
+            "id": "0d6ccb27-cb6d-479e-ab52-122bfc3a0253",
+            "x": 1200,
+            "y": 120,
+            "type": "sell",
+            "active": true,
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "3a6fd8e4-368c-4a76-921d-9fa5850c6edf"
+            ],
+            "id": "e2a1900c-fbe5-4cf0-b9a4-83e9f6a6aaa1",
+            "x": 1280,
+            "y": 120,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "winning_trades"
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "winning_trades",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "3a6fd8e4-368c-4a76-921d-9fa5850c6edf"
+            ],
+            "id": "ca65aff2-f665-4ebd-b206-f1fea4de7524",
+            "x": 1280,
+            "y": 480,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "losing_trades"
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "losing_trades",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [],
+            "id": "dd026b9f-04fa-445b-930b-c59684180f14",
+            "x": 1200,
+            "y": 320,
+            "type": "goto",
+            "active": true,
+            "params": {
+                "label": "Restart",
+                "target": "wallet",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "0b8a1752-a816-4351-9a95-fbf1e574625e"
+            ],
+            "id": "771355b6-09d7-427b-89e0-431dfa77ed9e",
+            "x": 720,
+            "y": 200,
+            "type": "buy",
+            "active": true,
+            "params": {
+                "quantity": 80,
+                "percent_of": "remaining",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "0b8a1752-a816-4351-9a95-fbf1e574625e"
+            ],
+            "id": "cffd3030-514d-48cc-a421-0171d1f38607",
+            "x": 720,
+            "y": 440,
+            "type": "buy",
+            "active": true,
+            "params": {
+                "quantity": 40,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "e46b700e-d6c8-4b8a-bab4-4193e8bd09fc"
+            ],
+            "id": "06f7a397-0892-46f2-b22a-ac30ff631bd5",
+            "x": 520,
+            "y": 320,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "455a2b84-f223-4af3-b8c6-8ca3cee161c5",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "roe",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "gte",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "da02b629-d5f9-41dc-afcf-d1161b744696",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "var",
+                                "value": 0,
+                                "reference": "win_loss_ratio"
+                            },
+                            "test": "lte",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 1,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "dd026b9f-04fa-445b-930b-c59684180f14"
+            ],
+            "id": "3a6fd8e4-368c-4a76-921d-9fa5850c6edf",
+            "x": 1280,
+            "y": 320,
+            "type": "var-operation",
+            "active": true,
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "winning_trades"
+                },
+                "operator": "/",
+                "operand_2": {
+                    "type": "var",
+                    "value": 1,
+                    "reference": "losing_trades"
+                },
+                "name": "win_loss_ratio",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "0d6ccb27-cb6d-479e-ab52-122bfc3a0253"
+            ],
+            "id": "e286f769-0636-4789-8ff2-557b06bb885f",
+            "x": 920,
+            "y": 120,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "afb1f564-2e1e-4255-a30a-69489eb7a093",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "4h",
+                            "trigger": "position",
+                            "signal": "short",
+                            "warmup": "1",
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "e1d5e628-2d65-4fe4-97b2-6e4df56aebc1",
+                        "type": "price-up",
+                        "edited": false,
+                        "params": {
+                            "trigger": 2,
+                            "mode": "order",
+                            "time_out": 0,
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "0d6ccb27-cb6d-479e-ab52-122bfc3a0253"
+            ],
+            "id": "9bf174d0-7f0d-4f98-8b1a-1779a2a3fc87",
+            "x": 960,
+            "y": 240,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "afb1f564-2e1e-4255-a30a-69489eb7a093",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "4h",
+                            "trigger": "crossover",
+                            "signal": "short",
+                            "warmup": "0",
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "d6cf9ca4-a498-4b5b-8234-f8d88139a971",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "price",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "gt",
+                            "operand_2": {
+                                "type": "order",
+                                "value": 1,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "d8b17abc-e5fc-470b-84dd-e9e5d04e9c84"
+            ],
+            "id": "4cc11576-66b5-49cd-954a-e861a9630ba5",
+            "x": 960,
+            "y": 400,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "afb1f564-2e1e-4255-a30a-69489eb7a093",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "4h",
+                            "trigger": "crossover",
+                            "signal": "short",
+                            "warmup": "0",
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "d0b89201-d465-4514-b20c-10ee1fb60e96",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "price",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "lte",
+                            "operand_2": {
+                                "type": "order",
+                                "value": 1,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        }
+    ]
+}

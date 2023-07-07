@@ -1,0 +1,154 @@
+{
+    "name": "Smart DCA",
+    "description": "",
+    "blocks": [
+        {
+            "connections": [
+                "6b25b6bd-3a02-4a2d-990e-8f052ea0de50"
+            ],
+            "id": "wallet",
+            "x": 245,
+            "y": 144,
+            "type": "wallet",
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "e36d9e5e-f289-49ab-8497-95a325d321c0"
+            ],
+            "id": "54389cdd-38e6-4514-b82b-9e4a3042aeea",
+            "x": 445,
+            "y": 264,
+            "type": "buy",
+            "active": true,
+            "params": {
+                "quantity": 2,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "54389cdd-38e6-4514-b82b-9e4a3042aeea"
+            ],
+            "id": "6b25b6bd-3a02-4a2d-990e-8f052ea0de50",
+            "type": "calendar",
+            "params": {
+                "on": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                "between": {
+                    "start": "00:00",
+                    "end": "00:00"
+                },
+                "kev": 2
+            },
+            "x": 445,
+            "y": 144
+        },
+        {
+            "connections": [
+                "5ac7ef85-152c-46c7-8f52-12995615fb45"
+            ],
+            "id": "e36d9e5e-f289-49ab-8497-95a325d321c0",
+            "x": 725,
+            "y": 264,
+            "type": "wait",
+            "active": true,
+            "params": {
+                "timeout": 1,
+                "timeframe": "days",
+                "kev": 2
+            }
+        },
+        {
+            "connections": [
+                "54389cdd-38e6-4514-b82b-9e4a3042aeea"
+            ],
+            "id": "5ac7ef85-152c-46c7-8f52-12995615fb45",
+            "x": 645,
+            "y": 144,
+            "type": "and",
+            "active": true,
+            "params": {
+                "blocks": [
+                    {
+                        "id": "6b25b6bd-3a02-4a2d-990e-8f052ea0de50",
+                        "type": "calendar",
+                        "edited": false,
+                        "params": {
+                            "on": [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0
+                            ],
+                            "between": {
+                                "start": "00:00",
+                                "end": "00:00"
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "42eea950-b7bf-453e-acc6-0a2064a0f814",
+                        "type": "balance",
+                        "edited": false,
+                        "params": {
+                            "currency": "base",
+                            "operator": "more",
+                            "mode": "usd",
+                            "value": 10,
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "4a9f7e8e-97bc-44da-9c7e-16805f35ef3c",
+                        "type": "var-test",
+                        "edited": true,
+                        "params": {
+                            "operand_1": {
+                                "type": "price",
+                                "value": 0,
+                                "reference": ""
+                            },
+                            "test": "lt",
+                            "operand_2": {
+                                "type": "avg_buy",
+                                "value": 1,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            },
+            "edited": true
+        }
+    ]
+}

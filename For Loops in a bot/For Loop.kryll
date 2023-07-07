@@ -1,0 +1,222 @@
+{
+    "blocks": [
+        {
+            "id": "wallet",
+            "editable": true,
+            "x": 40,
+            "y": 40,
+            "type": "wallet",
+            "connections": [
+                "73d4ae08-94aa-402c-87d3-570ec1176131"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "bb9e10ac-c7a9-419c-9c8b-c1c47a62509f",
+            "x": 640,
+            "y": 40,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "16b94fc2-fe2f-4e26-918d-5dcb97e5c3e4"
+            ],
+            "params": {
+                "action": "operation",
+                "operand_1": {
+                    "type": "var",
+                    "value": 0,
+                    "reference": "counter"
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "counter",
+                "kev": 2
+            }
+        },
+        {
+            "id": "73d4ae08-94aa-402c-87d3-570ec1176131",
+            "x": 160,
+            "y": 40,
+            "type": "var-operation",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "6a92ad8f-a66d-4b8d-be35-fe8595ecda57"
+            ],
+            "params": {
+                "action": "store",
+                "operand_1": {
+                    "type": "free",
+                    "value": 0,
+                    "reference": "compteur"
+                },
+                "operator": "+",
+                "operand_2": {
+                    "type": "free",
+                    "value": 1,
+                    "reference": ""
+                },
+                "name": "counter",
+                "kev": 2
+            }
+        },
+        {
+            "id": "6a92ad8f-a66d-4b8d-be35-fe8595ecda57",
+            "x": 320,
+            "y": 40,
+            "type": "and",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "bb9e10ac-c7a9-419c-9c8b-c1c47a62509f"
+            ],
+            "params": {
+                "blocks": [
+                    {
+                        "id": "a9f2224f-1d08-4311-990e-bbdc15e64ee8",
+                        "type": "supertrend",
+                        "edited": false,
+                        "params": {
+                            "length": 10,
+                            "factor": 3,
+                            "rate": "4h",
+                            "trigger": "crossover",
+                            "signal": "long",
+                            "warmup": "0",
+                            "use_past": 1,
+                            "test_zone": 0,
+                            "thresholds": {
+                                "min": {
+                                    "enabled": false,
+                                    "value": 0.01
+                                },
+                                "max": {
+                                    "enabled": false,
+                                    "value": 100
+                                }
+                            },
+                            "kev": 2
+                        }
+                    },
+                    {
+                        "id": "bea2afc8-2c22-4031-9e89-fbf4f49c1d34",
+                        "type": "var-test",
+                        "edited": false,
+                        "params": {
+                            "operand_1": {
+                                "type": "var",
+                                "value": 0,
+                                "reference": "compteur"
+                            },
+                            "test": "lt",
+                            "operand_2": {
+                                "type": "free",
+                                "value": 20,
+                                "reference": ""
+                            },
+                            "kev": 2
+                        }
+                    }
+                ],
+                "kev": 2
+            }
+        },
+        {
+            "id": "16b94fc2-fe2f-4e26-918d-5dcb97e5c3e4",
+            "x": 640,
+            "y": 200,
+            "type": "buy",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "05cd8f62-d7a9-4e68-9a8a-88e52e15fc88"
+            ],
+            "params": {
+                "quantity": 5,
+                "percent_of": "starting",
+                "type": "limit",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "05cd8f62-d7a9-4e68-9a8a-88e52e15fc88",
+            "x": 382,
+            "y": 200,
+            "type": "hub",
+            "active": true,
+            "connections": [
+                "6a92ad8f-a66d-4b8d-be35-fe8595ecda57",
+                "0b961469-a06e-44b1-8b73-8dac76615bc8"
+            ],
+            "params": {
+                "kev": 2
+            }
+        },
+        {
+            "id": "3efcb249-f378-4926-9a1e-6aa160da0195",
+            "x": 160,
+            "y": 200,
+            "type": "sell",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "73d4ae08-94aa-402c-87d3-570ec1176131"
+            ],
+            "params": {
+                "quantity": 100,
+                "percent_of": "remaining",
+                "type": "market",
+                "price": {
+                    "type": "block_price",
+                    "option": "fix",
+                    "percent": 3,
+                    "fix": 1000
+                },
+                "market_close": false,
+                "expiry": {
+                    "mode": "till_complete",
+                    "timeout": 15,
+                    "failover": null
+                },
+                "kev": 2
+            }
+        },
+        {
+            "id": "0b961469-a06e-44b1-8b73-8dac76615bc8",
+            "x": 265,
+            "y": 200,
+            "type": "price-up",
+            "active": true,
+            "edited": false,
+            "connections": [
+                "3efcb249-f378-4926-9a1e-6aa160da0195"
+            ],
+            "params": {
+                "trigger": 10,
+                "mode": "avg_bought_price",
+                "time_out": 0,
+                "kev": 2
+            }
+        }
+    ],
+    "name": "For Loop Exemple"
+}
