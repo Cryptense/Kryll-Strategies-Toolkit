@@ -44,6 +44,24 @@ This feature allows you to benefit from a multitude of pre-existing strategies a
 [![How to import a trading bot file in kryll editor](https://img.youtube.com/vi/HykQ8Ig_Hsk/0.jpg)](https://www.youtube.com/watch?v=HykQ8Ig_Hsk "How to import a trading bot in Kryll editor")
 
 
+## Kryll Supported Exchanges
+### Spot Trading
+- [x] [Binance](https://accounts.binance.com/en/register?ref=B0OYM38N)
+- [x] [Kucoin](https://www.kucoin.com/ucenter/signup?rcode=25RseHx)
+- [x] [Bybit](https://partner.bybit.com/b/kryll)
+- [x] [Coinbase Pro](https://coinbase.com/join/2JJAQS?src=referral-link)
+- [x] [HitBTC](https://hitbtc.com/signupapp?ref_id=4819868cbe0a5400)
+- [x] [Bittrex](https://global.bittrex.com/account/register)
+- [x] [Crypto.com](https://crypto.com/exch/)
+- [x] [Kraken](https://www.kraken.com/sign-up)
+- [x] [Binance US](https://www.binance.us/en/register)
+### Futures Trading
+  - [x] [Bybit Futures](https://partner.bybit.com/b/kryll)
+  - [x] [Kucoin Futures](https://www.kucoin.com/ucenter/signup?rcode=25RseHx)
+  - [x] [Binance Futures](https://www.binance.com/en/register?ref=B0OYM38N)
+
+
+
 ## Contribution
 
 Feel free to use, modify, and expand upon these strategies to suit your trading needs. If you come up with an interesting modification or a brand new strategy, we would love to hear about it. We welcome pull requests and any constructive feedback.
